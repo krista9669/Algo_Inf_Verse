@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ════════════════════════════════════════════════════════════ */
   document.querySelectorAll('.arr-exercise-toggle').forEach(button => {
     button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
+      const targetId = button.getAttribute('aria-controls');
       const solution = document.getElementById(targetId);
 
       if (!solution) return;
@@ -272,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // FIX: update aria-expanded for screen readers
       button.setAttribute('aria-expanded', isVisible ? 'true' : 'false');
     });
+  });
   });
 
   /* ════════════════════════════════════════════════════════════
