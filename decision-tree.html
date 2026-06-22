@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Decision Tree | Algo Infinity Verse</title>
+  <meta name="description"
+    content="Not sure which algorithm to use? Answer a few questions and get the right algorithm, time complexity, and practice problems — instantly." />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="decision-tree.css" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css"
+    integrity="sha512-W/zrbCncQnky/EzL+/AYwTtosvrM+YG/V6piQLSe2HuKS6cmbw89kjYkp3tWFn1dkWV7L1ruvJyKbLz73Vlgfg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loader">
+      <div class="infinity-loader">∞</div>
+      <h2>Algo Infinity Verse</h2>
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">∞</span>
+      <span class="logo-title">Algo Infinity Verse</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-item">
+        <a href="index.html#home" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <span>Learn</span>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="index.html#topics"                  class="dropdown-item" role="menuitem">DSA Topics</a>
+          <a href="index.html#practice"                class="dropdown-item" role="menuitem">Practice Problems</a>
+          <a href="index.html#quiz"                    class="dropdown-item" role="menuitem">Quizzes</a>
+          <a href="index.html#roadmap"                 class="dropdown-item" role="menuitem">Learning Roadmap</a>
+          <a href="array-learning.html"                class="dropdown-item" role="menuitem">Learn Arrays</a>
+          <a href="linkedlist-learning.html"           class="dropdown-item" role="menuitem">Learn Linked Lists</a>
+          <a href="stack-learning.html"                class="dropdown-item" role="menuitem">Learn Stacks</a>
+          <a href="python-learning.html"               class="dropdown-item" role="menuitem">Learn Python</a>
+          <a href="javascript-learning.html"           class="dropdown-item" role="menuitem">Learn JavaScript</a>
+          <a href="java-learning.html"                 class="dropdown-item" role="menuitem">Learn Java</a>
+          <a href="cplusplus-learning.html"            class="dropdown-item" role="menuitem">Learn C++</a>
+          <a href="c-learning.html"                    class="dropdown-item" role="menuitem">Learn C</a>
+          <a href="sliding-window-learning.html"       class="dropdown-item" role="menuitem">Learn Sliding Window</a>
+          <a href="prefix-sum-learning.html"           class="dropdown-item" role="menuitem">Learn Prefix Sum</a>
+          <a href="recursion-learning.html"            class="dropdown-item" role="menuitem">Learn Recursion</a>
+          <a href="sorting-visualizer.html"            class="dropdown-item" role="menuitem">Sorting Visualizer</a>
+          <a href="graph-visualizer.html"              class="dropdown-item" role="menuitem">Graph Visualizer</a>
+          <a href="pathfinding-visualizer.html"        class="dropdown-item" role="menuitem">Pathfinding Visualizer</a>
+          <a href="algo-assistant.html"                class="dropdown-item active" role="menuitem">Algorithm Assistant</a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <span>Interview</span>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="index.html#interview"      class="dropdown-item" role="menuitem">Interview Prep</a>
+          <a href="cheat-sheets.html"         class="dropdown-item" role="menuitem">DSA Cheat Sheets</a>
+          <a href="system-design.html"        class="dropdown-item" role="menuitem">System Design</a>
+          <a href="behavioral-questions.html" class="dropdown-item" role="menuitem">Behavioral Questions</a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <span>Community</span>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu" role="menu">
+          <a href="community.html"          class="dropdown-item" role="menuitem">Discussions</a>
+          <a href="index.html#dashboard"    class="dropdown-item" role="menuitem">Leaderboard</a>
+          <a href="support-page/index.html" class="dropdown-item" role="menuitem">Support</a>
+          <a href="feedback.html"           class="dropdown-item" role="menuitem">Feedback</a>
+        </div>
+      </li>
+      <li class="nav-item has-dropdown nav-profile-dropdown">
+        <button class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <span>Profile</span>
+          <i class="fas fa-chevron-down dropdown-icon"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end" role="menu">
+          <a href="index.html#dashboard" class="dropdown-item" role="menuitem">
+            <i class="fas fa-tachometer-alt"></i> Dashboard
+          </a>
+          <a href="index.html#profile" class="dropdown-item" role="menuitem">
+            <i class="fas fa-user"></i> My Profile
+          </a>
+          <a href="resume.html" class="dropdown-item" role="menuitem">
+            <i class="fas fa-file-alt"></i> Coding Resume
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="login.html"  class="dropdown-item nav-auth-link" role="menuitem" id="navLoginBtn">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </a>
+          <a href="signup.html" class="dropdown-item nav-auth-link" role="menuitem" id="navSignupBtn">
+            <i class="fas fa-user-plus"></i> Sign Up
+          </a>
+        </div>
+      </li>
+      <li class="nav-item nav-cta desktop-only">
+        <a href="index.html#practice" class="btn btn-primary nav-cta-btn">
+          <i class="fas fa-rocket"></i> Start Learning
+        </a>
+      </li>
+    </ul>
+    <div class="nav-buttons">
+      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-background">
+      <div class="stars"></div>
+      <div class="stars2"></div>
+      <div class="stars3"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Stop Guessing.</span>
+        <span class="main-title gradient-text">Algorithm Assistant</span>
+        <span class="subtitle">Answer 3 questions. Get the right algorithm.</span>
+      </h1>
+      <p class="adt-hero-desc">
+        Beginners struggle with <em>"which algorithm should I use?"</em><br>
+        This tool walks you through a decision tree and gives you the answer — with complexity, intuition, and practice problems.
+      </p>
+      <div class="hero-buttons">
+        <a href="#assistant" class="btn btn-primary">
+          <i class="fas fa-play"></i> Start the Assistant
+        </a>
+        <a href="#how-it-works" class="btn btn-secondary">
+          <i class="fas fa-info-circle"></i> How It Works
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="section adt-how-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">🗺️</span>
+        How It Works
+      </h2>
+      <p class="section-subtitle">Three steps from confusion to clarity.</p>
+      <div class="adt-steps">
+        <div class="adt-step">
+          <div class="adt-step-num">1</div>
+          <div class="adt-step-icon"><i class="fas fa-question-circle"></i></div>
+          <h3>Answer Questions</h3>
+          <p>Simple yes/no or multiple-choice questions about your problem — no jargon, plain English.</p>
+        </div>
+        <div class="adt-step-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="adt-step">
+          <div class="adt-step-num">2</div>
+          <div class="adt-step-icon"><i class="fas fa-sitemap"></i></div>
+          <h3>Walk the Tree</h3>
+          <p>Each answer narrows the decision space. You can see your path so you understand <em>why</em>.</p>
+        </div>
+        <div class="adt-step-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="adt-step">
+          <div class="adt-step-num">3</div>
+          <div class="adt-step-icon"><i class="fas fa-star"></i></div>
+          <h3>Get Your Answer</h3>
+          <p>Recommended algorithm, time/space complexity, intuition, and matching practice problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Assistant Section -->
+  <section id="assistant" class="section">
+    <div class="container">
+
+      <h2 class="section-title">
+        <span class="title-icon">🤖</span>
+        Decision Tree
+      </h2>
+      <p class="section-subtitle">
+        Pick a problem category to start, then answer the questions.
+      </p>
+
+      <!-- Category Picker -->
+      <div class="adt-categories" id="adtCategories">
+        <button class="adt-cat-btn active" data-tree="searching">
+          <span class="adt-cat-icon">🔍</span>
+          <span>Searching</span>
+        </button>
+        <button class="adt-cat-btn" data-tree="graph">
+          <span class="adt-cat-icon">🕸️</span>
+          <span>Graph / Path</span>
+        </button>
+        <button class="adt-cat-btn" data-tree="sorting">
+          <span class="adt-cat-icon">📊</span>
+          <span>Sorting</span>
+        </button>
+        <button class="adt-cat-btn" data-tree="subarray">
+          <span class="adt-cat-icon">📦</span>
+          <span>Subarray / Window</span>
+        </button>
+        <button class="adt-cat-btn" data-tree="dp">
+          <span class="adt-cat-icon">🎯</span>
+          <span>Optimization / DP</span>
+        </button>
+        <button class="adt-cat-btn" data-tree="linkedlist">
+          <span class="adt-cat-icon">🔗</span>
+          <span>Linked List</span>
+        </button>
+      </div>
+
+      <!-- Decision Tree UI -->
+      <div class="adt-tree-wrap">
+
+        <!-- Breadcrumb trail -->
+        <div class="adt-breadcrumb" id="adtBreadcrumb" aria-label="Your path so far">
+          <span class="adt-breadcrumb-label">Your path:</span>
+          <div class="adt-breadcrumb-trail" id="adtTrail"></div>
+        </div>
+
+        <!-- Question Card -->
+        <div class="adt-card" id="adtQuestionCard">
+          <div class="adt-card-inner">
+            <div class="adt-question-meta" id="adtQuestionMeta">Question 1 of ~3</div>
+            <h3 class="adt-question-text" id="adtQuestionText">
+              Is the data structure you're working with sorted?
+            </h3>
+            <div class="adt-options" id="adtOptions">
+              <!-- Buttons injected by JS -->
+            </div>
+            <button class="adt-back-btn" id="adtBackBtn" type="button" aria-label="Go back one step">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Card (hidden until leaf reached) -->
+        <div class="adt-result-card" id="adtResultCard" hidden>
+
+          <div class="adt-result-header">
+            <div class="adt-result-icon" id="adtResultIcon">⚡</div>
+            <div>
+              <div class="adt-result-label">Recommended Algorithm</div>
+              <h2 class="adt-result-name" id="adtResultName">Binary Search</h2>
+            </div>
+          </div>
+
+          <!-- Complexity table -->
+          <div class="adt-complexity-wrap">
+            <div class="adt-complexity-cell">
+              <span class="adt-complexity-label">Time</span>
+              <span class="adt-complexity-value" id="adtTimeComp">O(log n)</span>
+            </div>
+            <div class="adt-complexity-cell">
+              <span class="adt-complexity-label">Space</span>
+              <span class="adt-complexity-value" id="adtSpaceComp">O(1)</span>
+            </div>
+            <div class="adt-complexity-cell">
+              <span class="adt-complexity-label">Prerequisite</span>
+              <span class="adt-complexity-value" id="adtPrereq">Sorted array</span>
+            </div>
+          </div>
+
+          <!-- Intuition -->
+          <div class="adt-intuition" id="adtIntuition">
+            <!-- filled by JS -->
+          </div>
+
+          <!-- When to use / not use -->
+          <div class="adt-use-grid">
+            <div class="adt-use-card adt-use-yes">
+              <h4><i class="fas fa-check-circle"></i> Use when</h4>
+              <ul id="adtUseWhen"></ul>
+            </div>
+            <div class="adt-use-card adt-use-no">
+              <h4><i class="fas fa-times-circle"></i> Avoid when</h4>
+              <ul id="adtAvoidWhen"></ul>
+            </div>
+          </div>
+
+          <!-- Practice problems -->
+          <div class="adt-problems">
+            <h4 class="adt-problems-title">
+              <i class="fas fa-code"></i> Practice Problems
+            </h4>
+            <div class="adt-problems-list" id="adtProblemsList"></div>
+          </div>
+
+          <!-- Your decision path -->
+          <div class="adt-path-recap" id="adtPathRecap">
+            <h4><i class="fas fa-route"></i> How we got here</h4>
+            <div class="adt-path-steps" id="adtPathSteps"></div>
+          </div>
+
+          <!-- Actions -->
+          <div class="adt-result-actions">
+            <button class="btn btn-primary" id="adtRestartBtn" type="button">
+              <i class="fas fa-redo"></i> Try Another Problem
+            </button>
+            <button class="btn btn-secondary" id="adtChangeCatBtn" type="button">
+              <i class="fas fa-th"></i> Change Category
+            </button>
+          </div>
+
+        </div>
+      </div><!-- /.adt-tree-wrap -->
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>∞ Algo Infinity Verse</h3>
+          <p>Your ultimate destination for mastering Data Structures &amp; Algorithms and acing technical interviews.</p>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#topics">DSA Topics</a></li>
+            <li><a href="index.html#practice">Practice Problems</a></li>
+            <li><a href="index.html#roadmap">Learning Roadmap</a></li>
+            <li><a href="index.html#interview">Interview Prep</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="algo-assistant.html">Algorithm Assistant</a></li>
+            <li><a href="sorting-visualizer.html">Sorting Visualizer</a></li>
+            <li><a href="graph-visualizer.html">Graph Visualizer</a></li>
+            <li><a href="cheat-sheets.html">DSA Cheat Sheets</a></li>
+            <li><a href="array-learning.html">Learn Arrays</a></li>
+            <li><a href="linkedlist-learning.html">Learn Linked Lists</a></li>
+            <li><a href="stack-learning.html">Learn Stacks</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Newsletter</h4>
+          <p>Subscribe to get weekly problem sets and tips</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <label for="newsletterEmail" class="visually-hidden">Your email address</label>
+            <input type="email" id="newsletterEmail" name="email"
+              placeholder="Your email" autocomplete="email" required />
+            <button type="submit" aria-label="Subscribe">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Algo Infinity Verse. Crafted with 💜 for learners worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark mode fix (script.js calls initDarkMode but never defines it) -->
+  <script>
+    if (typeof window.initDarkMode !== "function") {
+      window.initDarkMode = function () {
+        const toggleBtn = document.getElementById("darkModeToggle");
+        if (!toggleBtn || toggleBtn.dataset.darkModeBound === "true") return;
+        toggleBtn.dataset.darkModeBound = "true";
+        const STORAGE_KEY = "algoInfinityVerse-theme";
+        const icon = toggleBtn.querySelector("i");
+        function applyTheme(theme) {
+          const isLight = theme === "light";
+          document.body.classList.toggle("light-mode", isLight);
+          if (icon) {
+            icon.classList.toggle("fa-sun", isLight);
+            icon.classList.toggle("fa-moon", !isLight);
+          }
+          toggleBtn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+        }
+        let saved = null;
+        try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+        const initial = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        applyTheme(initial);
+        toggleBtn.addEventListener("click", () => {
+          const next = document.body.classList.contains("light-mode") ? "dark" : "light";
+          applyTheme(next);
+          try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+        });
+      };
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof window.initDarkMode === "function") window.initDarkMode();
+    });
+  </script>
+  <script src="./auth.js"></script>
+  <script src="./script.js"></script>
+  <script src="./decision-tree.js"></script>
+
+</body>
+</html>
